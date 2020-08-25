@@ -1,0 +1,65 @@
+version: "3"
+
+services:
+  react-init:
+    image: react:init
+    build:
+      context: .
+      dockerfile: react-init.Dockerfile
+    command: yarn create new-app react
+    volumes:
+      - .:/home/developer/app
+
+  react-dev:
+    image: react:dev
+    build:
+      context: .
+      dockerfile: react-dev.Dockerfile
+    command: tail -f /dev/null
+    volumes:
+      - .:/home/developer/app
+    ports:
+      - 3000:3000
+
+  react-dev-server:
+    image: react:dev
+    build:
+      context: .
+      dockerfile: react-dev.Dockerfile
+    command: yarn start
+    volumes:
+      - .:/home/developer/app
+    ports:
+      - 3000:3000
+
+# services:
+#   rails-init:
+#     image: rails:init
+#     build:
+#       context: .
+#       dockerfile: rails-init.Dockerfile
+#     command: rails new railsapp
+#     volumes:
+#       - ./rails:/home/developer/app/railsapp
+
+#   rails-dev:
+#     image: rails:dev
+#     build:
+#       context: .
+#       dockerfile: rails-dev.Dockerfile
+#     command: bundle exec rails server -b 0.0.0.0
+#     volumes:
+#       - ./rails:/home/developer/app/railsapp
+#     ports:
+#       - 3000:3000
+
+#   rails-dev-prompt:
+#     image: rails:dev
+#     build:
+#       context: .
+#       dockerfile: rails-dev.Dockerfile
+#     command: tail -f /dev/null
+#     volumes:
+#       - ./rails:/home/developer/app/railsapp
+#     ports:
+#       - 3000:3000
