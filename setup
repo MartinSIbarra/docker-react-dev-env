@@ -1,0 +1,8 @@
+#!/bin/bash
+
+wget https://raw.githubusercontent.com/MartinSIbarra/docker-react-dev-env/master/react-init.Dockerfile
+wget https://raw.githubusercontent.com/MartinSIbarra/docker-react-dev-env/master/react-dev.Dockerfile
+wget https://raw.githubusercontent.com/MartinSIbarra/docker-react-dev-env/master/docker-compose.yml
+wget https://raw.githubusercontent.com/MartinSIbarra/docker-react-dev-env/master/go
+
+sudo chmod +x go
