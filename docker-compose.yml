@@ -19,7 +19,7 @@ services:
     volumes:
       - .:/home/developer/app
     ports:
-      - 3000:3000
+      - 8080:8080
 
   react-dev-server:
     image: react:dev
@@ -30,7 +30,7 @@ services:
     volumes:
       - .:/home/developer/app
     ports:
-      - 3000:3000
+      - 8080:8080
 
 # services:
 #   rails-init:
